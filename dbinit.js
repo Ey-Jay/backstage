@@ -11,13 +11,14 @@ const Tour = sequelize.define(
       defaultValue: Sequelize.UUIDV4,
       allowNull: false,
       unique: true,
+      primaryKey: true,
     },
     band: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     shows: {
-      type: DataTypes.ARRAY,
+      type: DataTypes.ARRAY(DataTypes.INTEGER),
       defaultValue: [],
     },
     name: {
@@ -35,6 +36,7 @@ const Show = sequelize.define(
       defaultValue: Sequelize.UUIDV4,
       allowNull: false,
       unique: true,
+      primaryKey: true,
     },
     date: {
       type: DataTypes.DATE,
@@ -46,7 +48,7 @@ const Show = sequelize.define(
       type: DataTypes.STRING,
     },
     support: {
-      type: DataTypes.ARRAY,
+      type: DataTypes.ARRAY(DataTypes.STRING),
       defaultValue: [],
     },
   },
