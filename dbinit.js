@@ -55,6 +55,4 @@ const Show = sequelize.define(
   {}
 );
 
-sequelize.sync();
-
 module.exports = { sequelize };
