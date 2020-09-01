@@ -1,4 +1,4 @@
-const sequelize = require('../dbinit');
+const { sequelize } = require('../dbinit');
 
 const getTours = async (req, res, next) => {
   // try {
