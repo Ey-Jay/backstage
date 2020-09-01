@@ -21,9 +21,7 @@ const Tour = sequelize.define(
       type: DataTypes.ARRAY(DataTypes.INTEGER),
       defaultValue: [],
     },
-    name: {
-      type: DataTypes.STRING,
-    },
+    name: DataTypes.STRING,
   },
   {}
 );
@@ -38,15 +36,9 @@ const Show = sequelize.define(
       unique: true,
       primaryKey: true,
     },
-    date: {
-      type: DataTypes.DATE,
-    },
-    city: {
-      type: DataTypes.STRING,
-    },
-    venue: {
-      type: DataTypes.STRING,
-    },
+    date: DataTypes.DATE,
+    city: DataTypes.STRING,
+    venue: DataTypes.STRING,
     support: {
       type: DataTypes.ARRAY(DataTypes.STRING),
       defaultValue: [],
