@@ -1,20 +1,25 @@
-const { sequelize } = require('../dbinit');
+const { Tour } = require('../dbinit');
 
 const getTours = async (req, res, next) => {
-  // try {
-  //   const data = await db.query('SELECT * FROM users;');
-  //   res.json(data.rows)
-  // } catch(err) {
-  //   next(err)
-  // }
+  try {
+    const tours = await Tour.findAll();
+    res.json(tours);
+  } catch (e) {
+    console.error(e);
+    res.send("That didn't work – woopsie!");
+  }
 };
 
-const getTour = (req, res, next) => {
-  // const { id } = req.params;
-  // db
-  //   .query("SELECT * FROM users WHERE id=$1;", [id])
-  //   .then(data => res.json(data.rows))
-  //   .catch(e => next(e));
+const getTour = async (req, res, next) => {
+  const { id } = req.params;
+
+  try {
+    const tour = await Tour.findByPk(id);
+    res.json(tour);
+  } catch (e) {
+    console.error(e);
+    res.send("That didn't work – woopsie!");
+  }
 };
 
 module.exports = {

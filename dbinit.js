@@ -7,7 +7,7 @@ const Tour = sequelize.define(
   'Tour',
   {
     id: {
-      type: DataTypes.UUID,
+      type: DataTypes.STRING,
       defaultValue: Sequelize.UUIDV4,
       allowNull: false,
       unique: true,
@@ -18,7 +18,7 @@ const Tour = sequelize.define(
       allowNull: false,
     },
     shows: {
-      type: DataTypes.ARRAY(DataTypes.INTEGER),
+      type: DataTypes.ARRAY(DataTypes.STRING),
       defaultValue: [],
     },
     name: DataTypes.STRING,
@@ -30,7 +30,7 @@ const Show = sequelize.define(
   'Show',
   {
     id: {
-      type: DataTypes.UUID,
+      type: DataTypes.STRING,
       defaultValue: Sequelize.UUIDV4,
       allowNull: false,
       unique: true,
@@ -47,4 +47,4 @@ const Show = sequelize.define(
   {}
 );
 
-module.exports = { sequelize };
+module.exports = { sequelize, Tour, Show };
