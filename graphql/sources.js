@@ -3,7 +3,7 @@ const { RESTDataSource } = require('apollo-datasource-rest');
 class Tour extends RESTDataSource {
   constructor() {
     super();
-    this.baseURL = `http://localhost:${process.env.PORT || 3001}/tours`;
+    this.baseURL = `https://api-backstage.herokuapp.com/tours`;
   }
 
   async getTours() {
@@ -20,7 +20,7 @@ class Tour extends RESTDataSource {
 class Show extends RESTDataSource {
   constructor() {
     super();
-    this.baseURL = `http://localhost:${process.env.PORT || 3001}/shows`;
+    this.baseURL = `https://api-backstage.herokuapp.com/shows`;
   }
 
   async getShows() {
