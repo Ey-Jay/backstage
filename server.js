@@ -29,6 +29,10 @@ const server = new ApolloServer({
 
 server.applyMiddleware({ app });
 
+app.get('*', (_, res) => {
+  res.send('BACKSTAGE API - SHOW ME YOUR PASS');
+});
+
 app.listen(PORT, () => {
   console.log(`🚀 server running on port ${PORT}`);
 });
