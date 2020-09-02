@@ -21,6 +21,7 @@ app.use(errorHandler);
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  playground: true,
   dataSources: () => ({
     tour: new Tour(),
     show: new Show(),
